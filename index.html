@@ -4,24 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-      <nav>
-        <h2>LUMUR</h2>
+     <!-- NAVBAR -->
+<header class="header">
+  <nav class="nav">
 
-        <ul>
-          <li><a href="#">Programme</a></li>
-          <li><a href="#">Billets</a></li>
-          <li><a href="#">Artistes</a></li>
-          <li><a href="#">Infos</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
+    <!-- Logo -->
+    <div class="nav__brand">
+      <h1 class="nav__logo">LUM.UR</h1>
+      <span class="nav__subtitle">Lumière Urbaine</span>
+    </div>
 
-        <button>Réserver billets</button>
-      </nav>
-    </header>
+    <!-- Menu -->
+    <ul class="nav__menu">
+      <li class="nav__item"><a href="#" class="nav__link">Programmation</a></li>
+      <li class="nav__item"><a href="#" class="nav__link">Horaire</a></li>
+      <li class="nav__item"><a href="#" class="nav__link">Artistes</a></li>
+      <li class="nav__item"><a href="#" class="nav__link">Billets</a></li>
+      <li class="nav__item"><a href="#" class="nav__link">Partenaires</a></li>
+      <li class="nav__item"><a href="#" class="nav__link">Témoignages</a></li>
+      <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
+    </ul>
+
+    <!-- CTA -->
+    <div class="nav__cta">
+      <button class="button button--primary">Obtenez vos billets</button>
+    </div>
+
+  </nav>
+</header>
+  
 
     <section class="hero">
       <h1>Lumière Urbaine</h1>
@@ -76,30 +91,48 @@
       </div>
     </section>
 
-    <section class="artistes">
-      <h2>ARTISTES</h2>
+    <section class="artists">
+  <h2 class="artists__title">ARTISTES</h2>
 
-      <div class="artistes-grid">
-        <div class="artiste">
-          <h4>Rin</h4>
-          <p>Artiste numérique</p>
-        </div>
+  <div class="artists__grid">
 
-        <div class="artiste">
-          <h4>George Fantini</h4>
-          <p>Compositeur électronique</p>
-        </div>
-
-        <div class="artiste">
-          <h4>Mila Super Nova</h4>
-          <p>DJ</p>
-        </div>
-
-        <div class="artiste">
-          <h4>Hikari</h4>
-          <p>Artiste visuel</p>
-        </div>
+    <!-- ARTISTE VEDETTE -->
+    <div class="artist artist--featured">
+      <span class="artist__badge">En vedette</span>
+      <div class="artist__image"></div>
+      <div class="artist__content">
+        <h3 class="artist__name">Bob l’artiste favori des médias numériques</h3>
+        <p class="artist__genre">Genre: Pop</p>
       </div>
+    </div>
+
+    <!-- ARTISTE NORMAL -->
+    <div class="artist">
+      <div class="artist__image"></div>
+      <div class="artist__content">
+        <h3 class="artist__name">George l’artiste émergent très prometteur</h3>
+        <p class="artist__genre">Genre: Rock</p>
+      </div>
+    </div>
+
+    <div class="artist">
+      <div class="artist__image"></div>
+      <div class="artist__content">
+        <h3 class="artist__name">Mélo Super Nova</h3>
+        <p class="artist__genre">Genre: Jazz</p>
+      </div>
+    </div>
+
+    <div class="artist">
+      <div class="artist__image"></div>
+      <div class="artist__content">
+        <h3 class="artist__name">Marie la Kid Synthétique</h3>
+        <p class="artist__genre">Genre: Électro</p>
+      </div>
+    </div>
+
+  </div>
+
     </section>
 
     <section class="billets">
