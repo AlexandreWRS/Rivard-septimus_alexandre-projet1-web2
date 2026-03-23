@@ -163,7 +163,7 @@ body {
 
 .nav__link {
     text-decoration: none;
-    color: white;
+    color:var(--color-secondary);
     font-size: 14px;
 }
 
@@ -171,30 +171,12 @@ body {
 .nav__cta {
     display: flex;
 }
-
-/* BOUTON DE BASE */
-.button {
-    padding: 10px 16px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    font-family: var(--primary-typo);
-    border-radius: 8px;
-
-}
-
 /* BLEU */
 .button--primary {
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
+    
+     background-color:var(--color-vedette);
 }
 
-/* NOIR (outline comme dans ton design) */
-.button--dark {
-    background-color: transparent;
-    color:var(--color-secondary);
-    border: 1px solid white;
-}
 /* =========================
    BLOCK: hero
    Rôle: Section principale avec image de fond et message marketing
@@ -244,7 +226,29 @@ body {
     line-height: 48px;
 
 }
+/* BOUTON DE BASE */
+.button {
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-family: var(--primary-typo);
+    border-radius: 8px;
 
+}
+.button--primaryJ{
+    background-color: var(--color-primary); 
+    color:var(--color-secondary);
+   
+}
+
+
+
+.button--dark {
+    background-color: transparent;
+    color:var(--color-secondary);
+    border: 1px solid white;
+}
 /* =========================
    BLOCK: program
    Rôle: Afficher les journées du festival sous forme de cartes
@@ -309,13 +313,13 @@ body {
     border: 1px solid #ccc;
     border-radius: var(--radius-md);
     overflow: hidden;
-    background: #f5f5f5;
+    background: var(--color-secondary)
 }
 
 /* IMAGE */
 .program-card__image {
     height: 200px;
-    background: #ccc;
+    background:var(--color-text-muted);
 
     display: flex;
     justify-content: center;
@@ -344,7 +348,7 @@ body {
     top: 10px;
     left: 10px;
 
-    background: #f2c94c;
+    background: var(--color-vedette);
     padding: 5px 10px;
     font-size: 12px;
     border-radius: var(--radius-sm);
@@ -383,9 +387,9 @@ de référence pour le positionnement absolu.
 
 /* CONTENEUR FLEX */
 .schedule {
-    background: #1f7a8c;
+    background:var(--color-primary);
     padding: 60px 20px;
-    color: white;
+    color: var(--color-secondary)
 }
 
 .schedule__container {
@@ -437,8 +441,8 @@ de référence pour le positionnement absolu.
     align-items: center;
     gap: 15px;
 
-    background: white;
-    color: black;
+    background:var(--color-secondary);
+    color:var(--color-horaire);
     padding: 15px 20px;
     border-radius: 8px;
     width: 350px;
@@ -471,7 +475,7 @@ de référence pour le positionnement absolu.
 
     font-family: var(--secondary-typo);
     font-size: 22px;
-    color: #1f7a8c;
+    color: var(--color-text-artist);
 }
 
 /* TEXTE */
@@ -602,7 +606,7 @@ de référence pour le positionnement absolu.
 
 /* VARIANTE VEDETTE */
 .artist--featured {
-    border-color: #f2c94c;
+    border-color:var(--color-vedette);
     background-color: var(--color-secondary);
 
 }
@@ -752,7 +756,7 @@ aucune
 */
 
 .partners {
-    background-color: #f5f5f5;
+    background-color: var(--color-secondary);
     padding: 60px 20px;
     text-align: center;
 }
@@ -935,7 +939,7 @@ aucune
 .temoignage {
     display: flex;
     gap: 15px;
-    background: white;
+    background: var(--color-secondary);
     padding: 15px;
     border-radius: 8px;
     align-items: center;
@@ -1135,13 +1139,13 @@ aucune
 }
 
 .contact__btn--primary {
-    background-color: #0b3c49;
-    color: white;
+    background-color:var(--color-text-artist);
+    color: var(--color-secondary)
 }
 
 .contact__btn--secondary {
     background-color: transparent;
-    border: 1px solid #0b3c49;
+    border: 1px solid var(--color-text-artist);
 }
 
 
@@ -1150,9 +1154,9 @@ aucune
    ========================= */
 
 .footer {
-    background-color: #0b3c49;
+    background-color:var(--color-text-artist);
     padding: 20px;
-    color: white;
+    color:var(--color-secondary);
 }
 
 .footer__container {
@@ -1165,11 +1169,16 @@ aucune
     gap: 10px;
 }
 
-.footer__cta {
-    background-color: #f4c542;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
+.footer__cta{
+  background-color:var(--color-vedette);
+display: flex;
+padding: 10px 16px;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+border-radius: 8px;
+cursor: pointer;
+border:none
 }
 
 .footer__text {
