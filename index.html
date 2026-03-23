@@ -1,207 +1,377 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Monoton&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- NAVBAR -->
+      <header class="header">
+        <nav class="nav">
+          <!-- Logo -->
+          <div class="nav__brand">
+            <h2 class="nav__logo">LUM.UR</h2>
+            <span class="nav__subtitle">Lumière Urbaine</span>
+          </div>
 
-     <!-- NAVBAR -->
-<header class="header">
-  <nav class="nav">
+          <!-- Menu -->
+          <ul class="nav__menu">
+            <li class="nav__item">
+              <a href="#" class="nav__link">Programmation</a>
+            </li>
+            <li class="nav__item"><a href="#" class="nav__link">Horaire</a></li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Artistes</a>
+            </li>
+            <li class="nav__item"><a href="#" class="nav__link">Billets</a></li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Partenaires</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Témoignages</a>
+            </li>
+            <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
+          </ul>
 
-    <!-- Logo -->
-    <div class="nav__brand">
-      <h1 class="nav__logo">LUM.UR</h1>
-      <span class="nav__subtitle">Lumière Urbaine</span>
+          <!-- Bouton -->
+          <div class="nav__cta">
+            <button class="button button--primary">Obtenez vos billets</button>
+          </div>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="title_hero"><h1>Lumière.Urbaine</h1></div>
+        <p>3 jours de musique et d'art immersif.</p>
+
+      <div class="hero__buttons">
+  <button class="button button--dark">En savoir plus</button>
+  <button class="button button--primary">Acheter des billets</button>
+</div>
+      </section>
+
+      <!-- PROGRAMMATION -->
+      <section class="program">
+        <h2 class="program__title">PROGRAMMATION</h2>
+
+        <div class="program__grid">
+          <!-- CARD -->
+          <div class="program-card">
+            <span class="program-card__badge">Jour 1</span>
+            <div class="program-card__image">Vendredi Festival</div>
+            <div class="program-card__content">
+              <h3 class="program-card__title">Vendredi</h3>
+              <p class="program-card__text">
+                Liste des performances du vendredi
+              </p>
+            </div>
+          </div>
+
+          <div class="program-card">
+            <span class="program-card__badge">Jour 2</span>
+            <div class="program-card__image">Samedi Festival</div>
+            <div class="program-card__content">
+              <h3 class="program-card__title">Samedi</h3>
+              <p class="program-card__text">Liste des performances du samedi</p>
+            </div>
+          </div>
+
+          <div class="program-card">
+            <span class="program-card__badge">Jour 3</span>
+            <div class="program-card__image">Dimanche Festival</div>
+            <div class="program-card__content">
+              <h3 class="program-card__title">Dimanche</h3>
+              <p class="program-card__text">
+                Liste des performances du dimanche
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HORAIRE -->
+      <section class="schedule">
+        <div class="schedule__container">
+          <!-- TEXTE GAUCHE -->
+          <div class="schedule__info">
+            <h2 class="schedule__title">HORAIRE</h2>
+            <p class="schedule__text">
+              Consultez notre horaire des performances.
+            </p>
+          </div>
+          <!-- LISTE DROITE -->
+          <div class="schedule__list">
+            <!-- ITEM Vendredi-->
+            <div class="schedule__item">
+              <div class="schedule__icon">
+                <img src="asset/images/vector.svg" alt="Calendrier" />
+                <span class="schedule__letter">V</span>
+              </div>
+
+              <div class="schedule__content">
+                <h4 class="schedule__day">Vendredi</h4>
+                <p class="schedule__desc">Performances de 15h à 23h.</p>
+              </div>
+            </div>
+
+            <!-- ITEM Samedi -->
+            <div class="schedule__item">
+              <div class="schedule__icon">
+                <img src="asset/images/vector.svg" alt="Calendrier" />
+                <span class="schedule__letter">S</span>
+              </div>
+
+              <div class="schedule__content">
+                <h4 class="schedule__day">Samedi</h4>
+                <p class="schedule__desc">Performances de 12h à 22h.</p>
+              </div>
+            </div>
+
+            <!-- ITEM Dimanche -->
+            <div class="schedule__item">
+              <div class="schedule__icon">
+                <img src="asset/images/vector.svg" alt="Calendrier" />
+                <span class="schedule__letter">D</span>
+              </div>
+
+              <div class="schedule__content">
+                <h4 class="schedule__day">Dimanche</h4>
+                <p class="schedule__desc">Performances de 14h à 21h.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="artists">
+        <h2 class="artists__title">ARTISTES</h2>
+
+        <div class="artists__grid">
+          <!-- ARTISTE VEDETTE -->
+          <div class="artist artist--featured">
+            <span class="artist__badge">En vedette</span>
+            <div class="artist__image"></div>
+            <div class="artist__content">
+              <h3 class="artist__name">
+                Bob l’artiste favori des médias numériques
+              </h3>
+              <p class="artist__genre">Genre: Pop</p>
+            </div>
+          </div>
+
+          <!-- ARTISTE NORMAL -->
+          <div class="artist">
+            <div class="artist__image"></div>
+            <div class="artist__content">
+              <h3 class="artist__name">
+                George l’artiste émergent très prometteur
+              </h3>
+              <p class="artist__genre">Genre: Rock</p>
+            </div>
+          </div>
+
+          <div class="artist">
+            <div class="artist__image"></div>
+            <div class="artist__content">
+              <h3 class="artist__name">Mélo Super Nova</h3>
+              <p class="artist__genre">Genre: Jazz</p>
+            </div>
+          </div>
+
+          <div class="artist">
+            <div class="artist__image"></div>
+            <div class="artist__content">
+              <h3 class="artist__name">Marie la Kid Synthétique</h3>
+              <p class="artist__genre">Genre: Électro</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BILLETS -->
+      <section class="tickets">
+        <div class="tickets__container">
+          <h2 class="tickets__title">BILLETS</h2>
+
+          <div class="tickets__list">
+            <div class="ticket">
+              <div class="ticket__icon">🎫</div>
+              <h3 class="ticket__name">Standard</h3>
+              <p class="ticket__price">$50</p>
+            </div>
+
+            <div class="ticket">
+              <div class="ticket__icon">🔖</div>
+              <h3 class="ticket__name">VIP</h3>
+              <p class="ticket__price">$100</p>
+            </div>
+
+            <div class="ticket">
+              <div class="ticket__icon">🌟</div>
+              <h3 class="ticket__name">Passeport 3 jours</h3>
+              <p class="ticket__price">$120</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PARTENAIRES -->
+      <section class="partners">
+        <div class="partners__container">
+          <h2 class="partners__title">PARTENAIRES</h2>
+          <p class="partners__subtitle">Nos précieux partenaires.</p>
+
+          <div class="partners__list">
+            <div class="partner">
+              <div class="partner__icon">
+                <img src="/asset/images/stream.svg" alt="logo du partenaire" />
+              </div>
+              <p class="partner__name">Partenaire inc.</p>
+            </div>
+
+            <div class="partner">
+              <div class="partner__icon">
+                <img src="/asset/images/gesture.svg" alt="logo du partenaire" />
+              </div>
+              <p class="partner__name">Précieux et investit</p>
+            </div>
+
+            <div class="partner">
+              <div class="partner__icon">
+                <img
+                  src="/asset/images/insights.svg"
+                  alt="logo du partenaire"
+                />
+              </div>
+              <p class="partner__name">Une compagnie qui investit</p>
+            </div>
+
+            <div class="partner">
+              <div class="partner__icon">
+                <img src="/asset/images/send.svg" alt="logo du partenaire" />
+              </div>
+              <p class="partner__name">Super partenaire</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TÉMOIGNAGES -->
+      <section class="temoignages">
+        <div class="temoignages__container">
+          <div class="temoignages__left">
+            <h2 class="temoignages__title">TÉMOIGNAGES</h2>
+            <p class="temoignages__subtitle">Écoutez ce que les gens disent!</p>
+          </div>
+
+          <div class="temoignages__right">
+            <div class="temoignage">
+              <div class="temoignage__icon">
+                <span class="silhouette"
+                  ><img
+                    src="asset/images/person.svg"
+                    alt="silhouette d'une personne "
+                /></span>
+              </div>
+              <div class="temoignage__content">
+                <h4 class="temoignage__name">Anne</h4>
+                <p class="temoignage__text">
+                  Un festival incroyable avec une ambiance électrisante!
+                </p>
+              </div>
+            </div>
+
+            <div class="temoignage">
+              <div class="temoignage__icon">
+                <span class="silhouette"
+                  ><img
+                    src="asset/images/person.svg"
+                    alt="silhouette d'une personne "
+                /></span>
+              </div>
+              <div class="temoignage__content">
+                <h4 class="temoignage__name">Marco</h4>
+                <p class="temoignage__text">
+                  Des artistes de haut niveau et une organisation parfaite.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="contact">
+        <div class="contact__container">
+          <div class="contact__left">
+            <h2 class="contact__title">CONTACT</h2>
+            <p class="contact__subtitle">
+              Nous aimerions avoir de vos nouvelles!
+            </p>
+          </div>
+
+          <form class="contact__form">
+            <label class="contact__label">Nom</label>
+            <input
+              class="contact__input"
+              type="text"
+              placeholder="Entrez votre nom"
+            />
+
+            <label class="contact__label">Email</label>
+            <input
+              class="contact__input"
+              type="email"
+              placeholder="Entrez votre email"
+            />
+
+            <label class="contact__label">Message</label>
+            <textarea
+              class="contact__textarea-message"
+              placeholder="Écrivez votre message ici"
+            ></textarea>
+
+            <div class="contact__buttons">
+              <button
+                type="button"
+                class="contact__btn contact__btn--secondary"
+              >
+                Annuler
+              </button>
+              <button type="submit" class="contact__btn contact__btn--primary">
+                Envoyer
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer__container">
+          <button class="footer__cta">Obtenez vos billets</button>
+
+          <p class="footer__text">Politique de confidentialité</p>
+          <p class="footer__text">Conditions d'utilisation</p>
+
+          <p class="footer__copyright">© 2023 Festival Lumière Urbaine</p>
+        </div>
+      </footer>
     </div>
-
-    <!-- Menu -->
-    <ul class="nav__menu">
-      <li class="nav__item"><a href="#" class="nav__link">Programmation</a></li>
-      <li class="nav__item"><a href="#" class="nav__link">Horaire</a></li>
-      <li class="nav__item"><a href="#" class="nav__link">Artistes</a></li>
-      <li class="nav__item"><a href="#" class="nav__link">Billets</a></li>
-      <li class="nav__item"><a href="#" class="nav__link">Partenaires</a></li>
-      <li class="nav__item"><a href="#" class="nav__link">Témoignages</a></li>
-      <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
-    </ul>
-
-    <!-- CTA -->
-    <div class="nav__cta">
-      <button class="button button--primary">Obtenez vos billets</button>
-    </div>
-
-  </nav>
-</header>
-  
-
-    <section class="hero">
-      <h1>Lumière Urbaine</h1>
-      <p>3 jours de musique et d'art immersif.</p>
-
-      <div class="hero-buttons">
-        <button>Voir la programmation</button>
-        <button>Acheter des billets</button>
-      </div>
-    </section>
-
-    <section class="programmation">
-      <h2>PROGRAMMATION</h2>
-
-      <div class="cards">
-        <div class="card">
-          <h4>Vendredi</h4>
-          <p>Découvrir les artistes du vendredi</p>
-        </div>
-
-        <div class="card">
-          <h4>Samedi</h4>
-          <p>Découvrir les artistes du samedi</p>
-        </div>
-
-        <div class="card">
-          <h4>Dimanche</h4>
-          <p>Découvrir les artistes du dimanche</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="horaire">
-      <h2>HORAIRE</h2>
-      <p>Consultez tous les performances</p>
-
-      <div class="horaire-list">
-        <div class="horaire-item">
-          <h4>Mercredi</h4>
-          <p>Ouverture des portes à 18h</p>
-        </div>
-
-        <div class="horaire-item">
-          <h4>Samedi</h4>
-          <p>Performances de 14h à 23h</p>
-        </div>
-
-        <div class="horaire-item">
-          <h4>Dimanche</h4>
-          <p>Performances de 14h à 21h</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="artists">
-  <h2 class="artists__title">ARTISTES</h2>
-
-  <div class="artists__grid">
-
-    <!-- ARTISTE VEDETTE -->
-    <div class="artist artist--featured">
-      <span class="artist__badge">En vedette</span>
-      <div class="artist__image"></div>
-      <div class="artist__content">
-        <h3 class="artist__name">Bob l’artiste favori des médias numériques</h3>
-        <p class="artist__genre">Genre: Pop</p>
-      </div>
-    </div>
-
-    <!-- ARTISTE NORMAL -->
-    <div class="artist">
-      <div class="artist__image"></div>
-      <div class="artist__content">
-        <h3 class="artist__name">George l’artiste émergent très prometteur</h3>
-        <p class="artist__genre">Genre: Rock</p>
-      </div>
-    </div>
-
-    <div class="artist">
-      <div class="artist__image"></div>
-      <div class="artist__content">
-        <h3 class="artist__name">Mélo Super Nova</h3>
-        <p class="artist__genre">Genre: Jazz</p>
-      </div>
-    </div>
-
-    <div class="artist">
-      <div class="artist__image"></div>
-      <div class="artist__content">
-        <h3 class="artist__name">Marie la Kid Synthétique</h3>
-        <p class="artist__genre">Genre: Électro</p>
-      </div>
-    </div>
-
-  </div>
-
-    </section>
-
-    <section class="billets">
-      <h2>BILLETS</h2>
-
-      <div class="billets-prix">
-        <div class="billet">
-          <h4>1 jour</h4>
-          <p>50$</p>
-        </div>
-
-        <div class="billet">
-          <h4>VIP</h4>
-          <p>100$</p>
-        </div>
-
-        <div class="billet">
-          <h4>3 jours</h4>
-          <p>120$</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="partenaires">
-      <h2>PARTENAIRES</h2>
-
-      <div class="logos">
-        <div>Partenaire inc.</div>
-        <div>Media Urbain</div>
-        <div>Énergie Québec</div>
-        <div>Super Sonorité</div>
-      </div>
-    </section>
-
-    <section class="temoignages">
-      <h2>TÉMOIGNAGES</h2>
-
-      <div class="temoignage">
-        <p>« Une expérience incroyable avec des visuels immersifs. »</p>
-        <strong>Marc</strong>
-      </div>
-
-      <div class="temoignage">
-        <p>« Un événement futuriste dans une atmosphère parfaite. »</p>
-        <strong>Marie</strong>
-      </div>
-    </section>
-
-    <section class="contact">
-      <h2>CONTACT</h2>
-
-      <form>
-        <label>Nom</label>
-        <input type="text" />
-
-        <label>Email</label>
-        <input type="email" />
-
-        <label>Message</label>
-        <textarea></textarea>
-
-        <button type="submit">Envoyer</button>
-      </form>
-    </section>
-
-    <footer>
-      <p>© 2025 Lumière Urbaine</p>
-    </footer>
- 
-
-</body>
+  </body>
 </html>

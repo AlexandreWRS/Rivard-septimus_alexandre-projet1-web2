@@ -1,44 +1,43 @@
-/* =========================================
-   TOKENS (VARIABLES CSS)
-   Rôle: centraliser les valeurs de design
-   (couleurs, espacements, typographie, etc.)
-========================================= */
-
 :root {
 
-    /* 🎨 COULEURS */
-    --color-primary: #1f7a8c;
+    /*  COULEURS */
+    --color-primary: #118AB2;
     --color-secondary: #ffffff;
+    --color-horaire: #000;
+    --color-text-artist: #073B4C;
     --color-box: rgba(217, 217, 217, 0.50);
     --color-vedette: #FFD166;
     --color-bg-dark: #0b1d26;
     --color-text: #ffffff;
     --color-text-muted: #cccccc;
+    --color-logo: #06D6A0;
 
-    /* 📏 ESPACEMENTS */
+    /* ESPACEMENTS */
     --spacing-xs: 8px;
     --spacing-sm: 16px;
     --spacing-md: 24px;
     --spacing-lg: 40px;
     --spacing-xl: 60px;
 
-    /* 🔲 BORDURES */
+    /*  BORDURES */
     --radius-sm: 4px;
     --radius-md: 8px;
     --radius-lg: 12px;
 
-    /* 🔤 TYPOGRAPHIE */
-    --font-primary: Arial, sans-serif;
+
 
     --font-size-sm: 14px;
     --font-size-md: 16px;
     --font-size-lg: 24px;
     --font-size-xl: 40px;
 
-    /* 🌫️ OMBRES */
+    /*  OMBRES */
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
     --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.3);
 
+    /*TYPOGRAPHIE */
+    --primary-typo: "Roboto", sans-serif;
+    --secondary-typo: "Monoton", sans-serif;
 }
 
 * {
@@ -47,90 +46,477 @@
     box-sizing: border-box;
 }
 
-/* GLOBAL */
+/* =========================================
+   LAYOUT GLOBAL (gabarit du site)
+========================================= */
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.5;
+    margin: 0;
+    background: #eaeaea;
+    font-family: var(--primary-typo);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    ;
 }
+
+
 
 /* CONTAINER PRINCIPAL */
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-    align-self: stretch;
-
+    max-width: 1200px;
+    /* largeur du site */
+    margin: 0 auto;
+    /* centre horizontalement */
+    background: white;
+    /* fond du site */
 }
 
 /* NAVBAR */
-.navbar {
-    display: flex;
-    gap: 24px;
-    justify-content: center;
-    align-items: center;
-    padding: 2px 24px;
-    flex: 1 0 0;
+.header {
+    background: #0b3c49;
+    /* bleu foncé */
+}
 
+/* =========================
+   BLOCK: nav
+   Rôle: Barre de navigation principale du site
+   =========================
+
+   Structure HTML:
+   <header class="header">
+     <nav class="nav">
+       <div class="nav__brand">
+         <h1 class="nav__logo"></h1>
+         <span class="nav__subtitle"></span>
+       </div>
+       <ul class="nav__menu">
+         <li><a class="nav__link"></a></li>
+       </ul>
+       <div class="nav__cta">
+         <button class="button button--primary"></button>
+       </div>
+     </nav>
+   </header>
+
+   Éléments:
+   nav__brand
+   nav__logo
+   nav__subtitle
+   nav__menu
+   nav__link
+   nav__cta
+
+   Variantes:
+   button--primary*/
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px;
+}
+    
+/* LOGO */
+.nav__brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav__logo {
+    font-family: var(--secondary-typo);
+    text-shadow: 0 0 6.2px rgba(255, 255, 255, 0.73);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+
+    color: var(--color-logo);
+    font-size: 20px;
+    margin: 0;
+}
+
+.nav__subtitle {
+    color: var(----color-secondary, #06D6A0);
+    font-family: var(--primary-typo);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+    /* 122.222% */
+    letter-spacing: 0.54px;
+}
+
+/* MENU */
+.nav__menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+
+    justify-content: center;
+    flex: 1;
+    /* permet de centrer */
+}
+
+.nav__link {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+/* CTA */
+.nav__cta {
+    display: flex;
+}
+
+/* BOUTON DE BASE */
+.button {
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-family: var(--primary-typo);
+    border-radius: 8px;
 
 }
 
+/* BLEU */
+.button--primary {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+/* NOIR (outline comme dans ton design) */
+.button--dark {
+    background-color: transparent;
+    color:var(--color-secondary);
+    border: 1px solid white;
+}
+/* =========================
+   BLOCK: hero
+   Rôle: Section principale avec image de fond et message marketing
+   =========================
+
+   Structure HTML:
+   <section class="hero">
+     <h1 class="title_hero"></h1>
+     <p></p>
+     <div class="hero__buttons">
+       <button></button>
+     </div>
+   </section>
+
+   Éléments:
+   hero__buttons
+
+   Variantes:
+   aucune
 /* HERO */
 .hero {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    height: 70vh;
-    width: 100%;
+    align-self: stretch;
+
+    gap: 60px;
+    height: 40vh;
     padding: 60px;
+
+    background-image: url("/asset/images/background.jpg");
     background-size: cover;
+    /* remplit toute la section */
     background-position: center;
+    /* centre l’image */
+    background-repeat: no-repeat;
     color: white;
 }
 
-/* PROGRAMMATION (cartes) */
-.programmation {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 40px;
-    width: 100%;
+.title_hero {
+    font-family: var(--secondary-typo);
+    text-shadow: 0 0 5.7px #06D6A0, 0 0 33.9px #06D6A0;
+    font-style: normal;
+    color:var(--color-secondary);
+    font-weight: 400;
+    line-height: 48px;
+
 }
 
-.card {
+/* =========================
+   BLOCK: program
+   Rôle: Afficher les journées du festival sous forme de cartes
+   =========================
+
+   Structure HTML:
+   <section class="program">
+     <div class="program__grid">
+       <div class="program-card">
+         <div class="program-card__image"></div>
+         <div class="program-card__content">
+           <h3 class="program-card__title"></h3>
+           <p class="program-card__text"></p>
+         </div>
+         <span class="program-card__badge"></span>
+       </div>
+     </div>
+   </section>
+
+   Éléments:
+   program__grid
+   program-card__image
+   program-card__content
+   program-card__title
+   program-card__text
+   program-card__badge
+
+   Variantes:
+   aucune   
+/* PROGRAMMATION (cartes) */
+.program {
+    padding: var(--spacing-xl);
+    text-align: center;
+}
+.program__title{
+      font-family: var(--secondary-typo);
+    color: var(--color-text);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    text-align: center;
+    color: var(--color-text-artist);
+
+}
+/* GRID FLEX */
+.program__grid {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.program-card {
+    position: relative;
+    width: 300px;
+
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 200px;
-    height: 150px;
-    padding: 16px;
-    border-radius: 8px;
-    background: #eee;
-    flex: 1 0 0;
 
+    border: 1px solid #ccc;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: #f5f5f5;
 }
 
-/* HORAIRE */
-.horaire {
-    display: flex;
-    justify-content: stretch;
-    gap: 60px;
-    background: var(----color-primary, #118AB2);
-    padding: 40px;
-    width: 100%;
-}
+/* IMAGE */
+.program-card__image {
+    height: 200px;
+    background: #ccc;
 
-.horaire-list {
     display: flex;
-
     justify-content: center;
-    align-items: flex-start;
-    gap: 16px;
-    flex: 1 0 0;
+    align-items: center;
 }
 
+/* CONTENU */
+.program-card__content {
+    padding: var(--spacing-md);
+    text-align: left;
+}
+
+.program-card__title {
+      font-size: var(--font-size-md);
+    margin-bottom: 5px;
+}
+
+.program-card__text {
+    font-size: var(--font-size-sm);
+    color: #2d9cdb;
+}
+
+/* BADGE */
+.program-card__badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    background: #f2c94c;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: var(--radius-sm);
+}
+
+
+
+/* 
+BLOCK: schedule__icon
+Rôle: Conteneur de l’icône calendrier avec une lettre superposée (V, S, D)
+
+Structure HTML:
+<div class="schedule__icon">
+  <img src="..." alt="">
+  <span class="schedule__letter"></span>
+</div>
+
+Éléments:
+schedule__letter
+
+Variantes:
+aucune
+
+NOTE TECHNIQUE:
+Flexbox est utilisé pour centrer l’icône à l’intérieur du conteneur.
+Cependant, pour superposer la lettre au centre de l’icône, la propriété
+"position: absolute" est utilisée sur .schedule__letter.
+
+Le parent (.schedule__icon) est en "position: relative" afin de servir
+de référence pour le positionnement absolu.
+
+=> Combinaison utilisée :
+- Flexbox : centrage et alignement
+- Position absolute : superposition précise
+*/
+
+/* CONTENEUR FLEX */
+.schedule {
+    background: #1f7a8c;
+    padding: 60px 20px;
+    color: white;
+}
+
+.schedule__container {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    padding: 0 80px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+/* TEXTE GAUCHE */
+.schedule__info {
+    max-width: 300px;
+}
+
+.schedule__title {
+    margin-bottom: 10px;
+    font-family: var(--secondary-typo);
+    color: var(--color-horaire);
+    align-self: stretch;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.schedule__text {
+    font-size: 14px;
+    font-family: var(--primary-typo);
+    color: var(--color-horaire);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+/* LISTE DROITE */
+.schedule__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ITEM */
+.schedule__item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    background: white;
+    color: black;
+    padding: 15px 20px;
+    border-radius: 8px;
+    width: 350px;
+}
+
+.schedule__icon {
+    width: 80px;
+    height: 80px;
+    background: #D0DBEB;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    /* TRÈS IMPORTANT */
+}
+
+.schedule__icon img {
+    width: 50%;
+}
+
+.schedule__letter {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-family: var(--secondary-typo);
+    font-size: 22px;
+    color: #1f7a8c;
+}
+
+/* TEXTE */
+.schedule__day {
+    margin: 0;
+    font-size: 16px;
+}
+
+.schedule__desc {
+    font-size: 13px;
+    color: #555;
+}
+
+/* =========================
+   BLOCK: artists
+   Rôle: Afficher les artistes sous forme de cartes
+   =========================
+
+   Structure HTML:
+   <section class="artists">
+     <h2 class="artists__title"></h2>
+     <div class="artists__grid">
+       <div class="artist">
+         <div class="artist__image"></div>
+         <div class="artist__content">
+           <h3 class="artist__name"></h3>
+           <p class="artist__genre"></p>
+         </div>
+         <span class="artist__badge"></span>
+       </div>
+     </div>
+   </section>
+
+   Éléments:
+   artists__title
+   artists__grid
+   artist__image
+   artist__content
+   artist__name
+   artist__genre
+   artist__badge
+
+   Variantes:
+   artist--featured (artiste en vedette)
+/*J'ai 2 .artists car quand j'enleve le premier mes image ne sont plus aligner en collum 
 /* ARTISTES */
 .artists {
     flex-direction: column;
@@ -147,19 +533,32 @@ body {
 
 /* CARD */
 .artist {
-    display: flex;
+
     position: relative;
-    justify-content: center;
-    align-self: stretch;
-
-
+    display: flex;
     flex-direction: column;
+
+    flex: 0 0 230px;
+
     border: 2px solid #2d9cdb;
     border-radius: var(--radius-md);
+    background: var(--color-box);
 
-    background-image: var(--color-box);
-    gap: 40px;
-    flex: 1 0 0;
+    overflow: hidden;
+}
+
+/* je n'arrive pas a mettre le titre plus haut*/
+.artists__title {
+    font-family: var(--secondary-typo);
+    color: var(--color-text);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    text-align: center;
+    color: var(--color-text-artist);
+
+
 
 }
 
@@ -175,6 +574,9 @@ body {
 .artist__content {
     padding: var(--spacing-md);
     text-align: left;
+    background-color: var(--color-secondary);
+    flex: 1 0 0;
+
 }
 
 .artist__name {
@@ -190,73 +592,590 @@ body {
 /* BADGE */
 .artist__badge {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    color: var(--color-vedette);
+    flex: 1 0 0;
+    color: var(--color-text-artist);
     padding: 5px 10px;
     font-size: 12px;
     border-radius: var(--radius-sm);
+    background-color: var(--color-vedette);
 }
 
 /* VARIANTE VEDETTE */
 .artist--featured {
     border-color: #f2c94c;
+    background-color: var(--color-secondary);
 
 }
 
 /* BILLETS */
-.billets {
+.ticket {
+    display: flex;
+    padding: 60px 70px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    align-self: stretch;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+
+
+}
+
+/* 
+BLOCK: tickets
+Rôle: Section affichant les différents types de billets
+
+Structure HTML:
+<section class="tickets">
+  <div class="tickets__container">
+    <h2 class="tickets__title"></h2>
+    <div class="tickets__list">
+      <div class="ticket">...</div>
+    </div>
+  </div>
+</section>
+
+Éléments:
+tickets__container
+tickets__title
+tickets__list
+
+Variantes:
+aucune
+*/
+
+.tickets {
+    background: var(--color-primary);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.tickets__container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tickets__title {
+    font-size: 34px;
+    font-family: var(--secondary-typo);
+    color: var(--color-horaire);
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+
+
+
+}
+
+
+/* 
+BLOCK: ticket
+Rôle: Carte individuelle d’un billet
+
+Structure HTML:
+<div class="ticket">
+  <div class="ticket__icon"></div>
+  <h3 class="ticket__name"></h3>
+  <p class="ticket__price"></p>
+</div>
+
+Éléments:
+ticket__icon
+ticket__name
+ticket__price
+
+Variantes:
+aucune
+*/
+
+.tickets__list {
     display: flex;
     justify-content: center;
     gap: 40px;
-    padding: 40px;
-    background: #1f7a8c;
+    flex-wrap: wrap;
+}
+
+.ticket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.ticket__icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #0b3c49;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.ticket__name {
+    font-size: 16px;
+    margin: 0;
+}
+
+.ticket__price {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* 
+BLOCK: partners
+Rôle: Afficher les partenaires du festival
+
+Structure HTML:
+<section class="partners">
+  <div class="partners__container">
+    <h2 class="partners__title"></h2>
+    <p class="partners__subtitle"></p>
+    <div class="partners__list">
+      <div class="partner">...</div>
+    </div>
+  </div>
+</section>
+
+Éléments:
+partners__container
+partners__title
+partners__subtitle
+partners__list
+
+Variantes:
+aucune
+*/
+
+.partners {
+    background-color: #f5f5f5;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.partners__container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.partners__title {
+    font-family: var(--secondary-typo);
+    color: var(var(--color-horaire));
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+    font-size: 36px;
+    text-align: center;
+
+}
+
+.partners__subtitle {
+    font-family: var(--primary-typo);
+    color: var(--color-horaire);
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+
+
+}
+
+.partners__list {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+
+}
+
+.partner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+
+}
+
+.partner__icon {
+    border-radius: 50%;
+    background-color: var(--color-secondary);
+    background: rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex: shrink 0;
+    aspect-ratio: 1/1;
+    padding: 19px 18.875px 19px 19.125px;
+
+}
+
+.partner__name {
+    color: var(--color-horaire);
+    text-align: center;
+    font-family: var(--primary-typo);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    align-self: stretch;
+
+}
+
+/* =========================
+   BLOCK: temoignages
+   Rôle: Section contenant les avis des visiteurs
+   =========================
+
+   Structure HTML:
+   <section class="temoignages">
+     <div class="temoignages__container">
+       <div class="temoignages__left">
+         <h2 class="temoignages__title"></h2>
+         <p class="temoignages__subtitle"></p>
+       </div>
+
+       <div class="temoignages__right">
+         <div class="temoignage">
+           <div class="temoignage__icon"></div>
+           <div class="temoignage__content">
+             <h4 class="temoignage__name"></h4>
+             <p class="temoignage__text"></p>
+           </div>
+         </div>
+       </div>
+     </div>
+   </section>
+
+   Éléments:
+   temoignages__container
+   temoignages__left
+   temoignages__right
+   temoignages__title
+   temoignages__subtitle
+   temoignage__icon
+   temoignage__content
+   temoignage__name
+   temoignage__text
+
+   Variantes:
+   aucune */
+
+.temoignages {
+    background-color: var(--color-primary);
+    display: flex;
+    padding: 60px 170px;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    align-self: stretch;
+}
+
+.temoignages__container {
+    display: flex;
+    align-items: center;
+    max-width: 1100px;
+}
+
+.temoignages__left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+/* TITRE */
+.temoignages__title {
+    font-family: var(--secondary-typo);
+    color: var(--color-text-artist);
+
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 48px;
+
+    margin: 0;
+    text-align: left;
+    /*  important */
+}
+
+/* SOUS-TITRE */
+.temoignages__subtitle {
+    font-family: var(--primary-typo);
+    color: var(--color-horaire);
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+
+    margin: 0;
+    text-align: left;
+}
+
+.temoignages__right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+/* =========================================
+   COMPONENT: temoignage (CARTE)
+========================================= */
+
+.temoignage {
+    display: flex;
+    gap: 15px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.temoignage__icon {
+    padding: 13px 12.5px 13px 13.5px;
+    background: rgba(217, 217, 217, 0.50);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.silhouette {
+    width: 100;
+    height: 100;
+}
+
+.temoignage__content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.temoignage__name {
+    margin: 0;
+    font-size: 16px;
+}
+
+.temoignage__text {
+    margin: 0;
+    font-size: 14px;
+}
+
+
+/* =========================
+   BLOCK: contact
+   Rôle: Formulaire de contact utilisateur
+   =========================
+
+   Structure HTML:
+   <section class="contact">
+     <div class="contact__container">
+       <div class="contact__left">
+         <h2 class="contact__title"></h2>
+         <p class="contact__subtitle"></p>
+       </div>
+
+       <form class="contact__form">
+         <label class="contact__label"></label>
+         <input class="contact__input">
+         <textarea class="contact__textarea"></textarea>
+
+         <div class="contact__buttons">
+           <button class="contact__btn contact__btn--secondary"></button>
+           <button class="contact__btn contact__btn--primary"></button>
+         </div>
+       </form>
+     </div>
+   </section>
+
+   Éléments:
+   contact__container
+   contact__left
+   contact__title
+   contact__subtitle
+   contact__form
+   contact__label
+   contact__input
+   contact__textarea
+   contact__buttons
+   contact__btn
+
+   Variantes:
+   contact__btn--primary
+   contact__btn--secondary
+*/
+
+.contact {
+    background-color: var(--color-secondary);
+    padding: 60px 20px;
+}
+
+.contact__container {
+    display: flex;
+    padding: 60px 170px;
+    align-items: center;
+
+
+
+    gap: 60px;
+}
+
+.contact__title {
+    margin-bottom: 10px;
+    font-family: var(--secondary-typo);
+    color: var(--color-text-artist);
+    align-self: stretch;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.contact__subtitle {
+    color: var(--color-text-artist);
+    font-family: var(--primary-typo);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    /* 150% */
+    margin: 0;
+    text-align: left;
+}
+
+.contact__left {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    align-items: flex-start;
+
+}
+
+
+
+.contact__form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.contact__input,
+.contact__textarea {
+
+    display: flex;
+    padding: 8px 12px;
+    align-items: center;
+    gap: 4px;
+    align-self: stretch;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+
+    background: var(--color-secondary);
+}
+
+.contact__textarea-message {
+    font-family: var(--primary-typo);
+    display: flex;
+    padding: 8px 6px;
+    align-items: center;
+    gap: 4px;
+    align-self: stretch;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: var(--color-secondary)
+}
+
+.contact__label {
+    color: var(--color-text-artist);
+    font-family: var(--primary-typo);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    /* 142.857% */
+}
+
+.contact__textarea {
+    display: flex;
+
+    color: var(--color-horaire);
+    font-family: var(--primary-typo);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    /* 142.857% */
+    min-height: 100px;
+}
+
+.contact__buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.contact__btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact__btn--primary {
+    background-color: #0b3c49;
     color: white;
 }
 
-.billet {
+.contact__btn--secondary {
+    background-color: transparent;
+    border: 1px solid #0b3c49;
+}
+
+
+/* =========================
+   BLOCK: footer
+   ========================= */
+
+.footer {
+    background-color: #0b3c49;
+    padding: 20px;
+    color: white;
+}
+
+.footer__container {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-/* PARTENAIRES */
-.partenaires {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 40px;
+.footer__cta {
+    background-color: #f4c542;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
 }
 
-/* TÉMOIGNAGES */
-.temoignages {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 40px;
-    background: #1f7a8c;
+.footer__text {
+    font-size: 12px;
 }
 
-/* CONTACT */
-.contact {
-    display: flex;
-    justify-content: center;
-    padding: 40px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-
-    .programmation,
-    .artistes,
-    .billets {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero {
-        align-items: center;
-        text-align: center;
-    }
+.footer__copyright {
+    font-size: 12px;
 }
