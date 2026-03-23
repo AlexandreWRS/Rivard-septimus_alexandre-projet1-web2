@@ -63,15 +63,7 @@ body {
 
 
 
-/* CONTAINER PRINCIPAL */
-.container {
-    max-width: 1200px;
-    /* largeur du site */
-    margin: 0 auto;
-    /* centre horizontalement */
-    background: white;
-    /* fond du site */
-}
+
 
 /* NAVBAR */
 .header {
